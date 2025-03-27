@@ -55,6 +55,112 @@ button{
 .image-grid image:hover{
     transform: scale(1.1);
 }
+.footer_columns {
+    background-color: #f8f9fa;
+    color: #f7f4f4;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    border-top: 1px solid #e1e1e1;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 30px;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+  }
+ /* Footer Column Styles */
+.footer_columns {
+    background-color: green;
+    padding: 30px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-column {
+    margin-bottom: 20px;
+  }
+  
+  .footer-column h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ddd;
+    background-color:white;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-links li a {
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 0;
+  }
+  
+  .footer-links li a:hover {
+    color: light rgb(146, 236, 146);
+    padding-left: 5px;
+  }
+  
+  
+  
+  .contact-info p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    color: black;
+    line-height: 1.5;
+  }
+  
+  .mission-text {
+    font-size: 15px;
+    color: black;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+  .footer-column li a{
+    color: black;
+    text-decoration: none;
+    list-style: none;
+  }
+  .footer-column li a:hover{
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .footer-column {
+      min-width: 100%;
+    }
+  }
 /* @media(max_width:768px){
     .image-grid{
         grid-template-columns: repeat(2,1fr);
@@ -88,20 +194,65 @@ h1{
 /* services section */
 
 /* Container for service types */
-.service-types {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Optional, adds space between content */
-    padding: 20px;
-    flex-wrap: wrap; /* Ensures content wraps to the next line if necessary */
+.services-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
   
+  .service-types {
+    display: grid;
+    /* Create 2 rows with equal height */
+    grid-template-rows: auto auto;
+    /* 3 columns in the first row, 2 in the second */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  /* First row - 3 items */
+  .type:nth-child(1),
+  .type:nth-child(2),
+  .type:nth-child(3) {
+    grid-row: 1;
+  }
+  
+  /* Second row - 2 items */
+  .type:nth-child(4),
+  .type:nth-child(5) {
+    grid-row: 2;
+  }
+  
+  /* Make the last item in second row span 2 columns */
+  .type:nth-child(5) {
+    grid-column: span 2;
+  }
+  
+  /* Optional: Style your service cards */
   .type {
-    flex: 1; /* Makes the content take up equal width */
+    background: rgb(214, 207, 207);
     padding: 20px;
-    border: 1px solid black;
-    /* background-color: rgba(0, 255, 47, 0.323); Optional background color */
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px green;
+  }
+  #image{
+    size: 10%;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .service-types {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .type:nth-child(5) {
+      grid-column: span 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .service-types {
+      grid-template-columns: 1fr;
+    }
   }
 .about{
     display: flex;
